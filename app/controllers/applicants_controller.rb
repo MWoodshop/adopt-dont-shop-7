@@ -37,23 +37,17 @@ class ApplicantsController < ApplicationController
     @applicant.update(status: 'Pending')
   end
 
-  # ***
-  # Remove if no longer used
-  # ***
-  # def search
-  #   @applicant = Applicant.find(params[:id])
-  #   @matching_pets = Pet.where('name LIKE ?', "%#{params[:pet_name]}%")
-  #   render 'search'
-  # end
-
   def update
     @applicant = Applicant.find(params[:id])
 
-    if @applicant.update(applicant_params)
+    if applicant_params[:description].blank?
+      flash[:error] = 'Description cannot be empty'
       redirect_to applicant_path(@applicant)
+    elsif @applicant.update(applicant_params)
+      redirect_to applicant_path(@applicant), notice: 'Description successfully updated'
     else
       flash[:error] = 'Invalid data. Please fill out fields correctly.'
-      render :show
+      redirect_to applicant_path(@applicant)
     end
   end
 

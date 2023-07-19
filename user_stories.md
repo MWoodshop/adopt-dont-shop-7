@@ -108,7 +108,7 @@ And I see the Pet I want to adopt listed on this applicant
 ```
 
 ```
-[ ] done
+[✓] done
 
 6. Submit an Applicant
 
@@ -126,7 +126,7 @@ And I do not see a section to add more pets to this applicant
 ```
 
 ```
-[ ] done
+[✓] done
 
 7. No Pets on an Applicant
 
