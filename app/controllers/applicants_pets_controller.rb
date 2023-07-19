@@ -20,7 +20,6 @@ class ApplicantsPetsController < ApplicationController
       # Update the status to "Pending" for the associated applicant
       @applicant = @applicants_pet.applicant
       @applicant.update(status: 'Pending')
-      @applicant.patch(description: 'test')
 
       redirect_to @applicant, notice: 'Description successfully updated'
     else
