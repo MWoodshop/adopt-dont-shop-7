@@ -5,12 +5,13 @@ class ApplicantsPetsController < ApplicationController
 
     # Check if the pet is already associated with the applicant
     if @applicant.pets.exists?(@pet.id)
+      redirect_to applicant_path(@applicant)
       flash[:error] = 'Pet is already associated with the applicant.'
     else
       @applicant.pets << @pet
     end
 
-    redirect_to applicant_path(@applicant)
+    redirect_to @applicant
   end
 
   def update_adoption_description
