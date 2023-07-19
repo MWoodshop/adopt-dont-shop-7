@@ -12,6 +12,7 @@ Pet.destroy_all
 Veterinarian.destroy_all
 VeterinaryOffice.destroy_all
 Applicant.destroy_all
+ApplicantsPets.destroy_all
 
 # Create shelters
 shelters = Shelter.create([
