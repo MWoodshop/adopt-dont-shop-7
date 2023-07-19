@@ -20,12 +20,11 @@
         <li>
           <span class="main-menu-label">Main Menu</span>
           <%= link_to "Home", "/" %></li>
+        <li><%= link_to "Applicants", "/applicants" %></li>
         <li><%= link_to "Pets", "/pets" %></li>
         <li><%= link_to "Shelters", "/shelters" %></li>
         <li><%= link_to "Veterinarians", "/veterinarians" %></li>
         <li><%= link_to "Veterinary Offices", "/veterinary_offices" %></li>
-        <li><%= link_to "Applicants (FOR DEBUGGING)", "/applicants" %></li>
-        <li><%= link_to "Admin Shelter (FOR DEBUGGING)", "/admin/shelters" %></li>
       </ul>
     </nav>
     <!-- Admin Menu -->
@@ -35,6 +34,7 @@
           <span class="admin-menu-label">Admin Menu</span>
           <%= link_to "Home", admin_root_path %>
         </li>
+        <li><%= link_to "Admin Applicants", admin_applicants_path %></li>
         <li><%= link_to "Admin Shelters", admin_shelters_path %></li>
         <!-- Add any other buttons in the future <li></li> -->
       </ul>

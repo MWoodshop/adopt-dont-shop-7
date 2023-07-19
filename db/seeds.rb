@@ -110,7 +110,7 @@ applicants = Applicant.create([
                                   state: 'State 1',
                                   zip_code: 12_345,
                                   description: 'Description 1',
-                                  status: 'In Progress'
+                                  status: 'Pending'
                                 },
                                 {
                                   name: "John Clay O'Leary",
@@ -141,6 +141,11 @@ rex.update(shelter: caturdays_shelter) unless rex.shelter.present?
 rex = Pet.find_by(name: 'Rex')
 jane_fonda = Applicant.find_by(name: 'Jane Fonda')
 jane_fonda.applicants_pets.create(pet: rex) unless rex.applicants.include?(jane_fonda)
+
+# Assign 'Rex' to 'Mike Wood' if the association doesn't already exist
+rex = Pet.find_by(name: 'Rex')
+mike_wood = Applicant.find_by(name: 'Mike Wood')
+mike_wood.applicants_pets.create(pet: rex) unless rex.applicants.include?(mike_wood)
 
 # Output a success message
 puts 'Sample rows created successfully!'

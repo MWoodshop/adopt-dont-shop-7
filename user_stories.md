@@ -198,7 +198,7 @@ Pets on an applicant can either be accepted or rejected.
 For this set of stories, we will be making routes that begin with '/admin'. This is to indicate that only a user with special privileges should be able to accept or reject pets on an applicant. Normally, we would want to make sure that a user is logged into an admin account before being able complete any of this workflow, but we will not add any log in or authorization functionality to this project.
 
 ```
-[ ] done
+[✓] done
 
 12. Approving a Pet for Adoption
 
@@ -212,7 +212,7 @@ And instead I see an indicator next to the pet that they have been approved
 ```
 
 ```
-[ ] done
+[✓] done
 
 13. Rejecting a Pet for Adoption
 
@@ -226,7 +226,7 @@ And instead I see an indicator next to the pet that they have been rejected
 ```
 
 ```
-[ ] done
+[✓] done
 
 14. Approved/Rejected Pets on one Applicant do not affect other Applicants
 

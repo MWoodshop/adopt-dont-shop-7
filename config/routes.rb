@@ -56,4 +56,11 @@ Rails.application.routes.draw do
                                                                   as: 'create_veterinary_office_veterinarian'
   get '/admin', to: 'admin/admin#welcome', as: 'admin_root'
   get '/admin/shelters', to: 'admin/shelters#index', as: 'admin_shelters'
+  get '/admin/applicants', to: 'admin/applicants#index', as: 'admin_applicants'
+  get '/admin/applicants/:id', to: 'admin/applicants#show', as: 'admin_applicant'
+  get '/admin/applicants/:id/search', to: 'applicants#search', as: 'admin_applicant_search'
+  patch '/applicants/:applicant_id/pets/:pet_id/approve', to: 'admin/applicants#approve_pet',
+                                                          as: 'approve_applicant_pet'
+  patch '/applicants/:applicant_id/pets/:pet_id/reject', to: 'admin/applicants#reject_pet',
+                                                         as: 'reject_applicant_pet'
 end

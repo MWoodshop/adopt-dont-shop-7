@@ -1,0 +1,34 @@
+<%= render partial: 'shared/applicant_info', locals: { applicant: @applicant } %>
+<% if @applicant.pets.present? %>
+  <h3>Pets Assigned to this Application</h3>
+  <ul>
+    <% @applicant.pets.each do |pet| %>
+      <% if @applicant.status == 'Pending' %>
+        <li>
+          Pet Name: <%= pet.name %>
+          <%= button_to 'Approve Adoption', approve_applicant_pet_path(applicant_id: @applicant.id, pet_id: pet.id), method: :patch, class: 'approve-button' %>
+          <%= button_to 'Reject Adoption', reject_applicant_pet_path(applicant_id: @applicant.id, pet_id: pet.id), method: :patch, class: 'reject-button' %>
+        </li>
+      <% else %>
+        <li>Pet Name: <%= pet.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+<% if params[:pet_name].present? && @matching_pets.present? %>
+  <h3 id="matching-pets-heading">Matching Pets</h3>
+  <ul id="matching-pets-list">
+    <% @matching_pets.each do |pet| %>
+      <li>
+        <span class="pet-name"><%= pet.name %></span>
+        <% if @applicant.status == 'Pending' %>
+          <%= button_to 'Add Pet', create_applicant_pet_path(applicant_id: @applicant.id, pet_id: pet.id), method: :post %>
+        <% else %>
+          <%= pet.name %> - Not available for adoption
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No pets found.</p>
+<% end %>

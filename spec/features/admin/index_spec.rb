@@ -69,11 +69,11 @@ RSpec.describe 'the admin/shelters' do
     ApplicantsPet.create(applicant: applicant1, pet: pet1)
     applicant1.reload
 
-    # visit "/pets/#{pet1.id}"
-    # expect(page).to have_content("Shelter Name: #{shelter1.name}")
+    visit "/pets/#{pet1.id}"
+    expect(page).to have_content("Shelter Name: #{shelter1.name}")
 
-    # visit "/applicants/#{applicant1.id}"
-    # expect(page).to have_content('Status: Pending')
+    visit "/applicants/#{applicant1.id}"
+    expect(page).to have_content('Status: Pending')
 
     visit '/admin/shelters'
     within('#pending-applications-title + p', text: shelter1.name) do
