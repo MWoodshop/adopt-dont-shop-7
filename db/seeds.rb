@@ -118,7 +118,6 @@ applicants = Applicant.create([
                                   city: 'City 2',
                                   state: 'State 2',
                                   zip_code: 67_890,
-                                  description: 'Description 2',
                                   status: 'In Progress'
                                 },
                                 {
