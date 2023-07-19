@@ -11,7 +11,6 @@ RSpec.describe 'applicant form' do
       expect(find('form')).to have_content('City')
       expect(find('form')).to have_content('State')
       expect(find('form')).to have_content('Zip code')
-      expect(find('form')).to have_content('Description')
     end
   end
 
@@ -25,7 +24,6 @@ RSpec.describe 'applicant form' do
         fill_in 'City', with: 'Denver'
         fill_in 'State', with: 'CO'
         fill_in 'Zip code', with: 80_202
-        fill_in 'Description', with: 'I love dogs'
         click_button 'Save'
 
         expect(current_path).to eq(applicant_path(Applicant.last))
@@ -34,7 +32,6 @@ RSpec.describe 'applicant form' do
         expect(page).to have_content('Denver')
         expect(page).to have_content('CO')
         expect(page).to have_content(80_202)
-        expect(page).to have_content('I love dogs')
         expect(page).to have_text('In Progress')
       end
 
@@ -47,7 +44,6 @@ RSpec.describe 'applicant form' do
           fill_in 'City', with: 'Denver'
           fill_in 'State', with: 'CO'
           fill_in 'Zip code', with: 'Denver'
-          fill_in 'Description', with: 'I love dogs'
           click_button 'Save'
 
           expect(current_path).to eq('/applicants/new')

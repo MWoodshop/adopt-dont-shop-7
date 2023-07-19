@@ -67,6 +67,7 @@ RSpec.describe 'the applicant shows page' do
     expect(current_path).to eq(applicant_path(@applicant1))
     expect(page).to have_content('Matching Pets')
     expect(page).to have_css('.pet-name', text: 'Lucille Bald')
+    click_button 'Submit this Application'
   end
 
   # User Story 8 Test
