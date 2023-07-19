@@ -1,8 +1,0 @@
-<div class="search">
-  <%= form_with(url: applicant_path(applicant), local: true, method: :get, id: 'search-pet-form') do |f| %>
-    <h3>Add a Pet to this Application</h3>
-    <p>Pet: <%= f.label :pet_name %></p>
-    <p><%= f.text_field :pet_name %></p>
-    <p><%= f.submit "Search for Pet" %></p>
-  <% end %>
-</div>
