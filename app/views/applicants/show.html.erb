@@ -8,11 +8,14 @@
 <br>
 <% if @applicant.pets.present? %>
   <h3>Pets Assigned to this Application</h3>
-  <ul>
     <% @applicant.pets.each do |pet| %>
       <li><%= pet.name %></li>
+      <% if @applicant.description.blank? %>
+      <!-- Renders _description_form_index.html.erb partial -->
+      <%= render partial: 'description_form', locals: { applicant: @applicant } %>
+
+      <% end %>
     <% end %>
-  </ul>
 <% end %>
 <!-- Renders _search_form_index.html.erb partial -->
 <%= render partial: 'search_form', locals: { applicant: @applicant } %>

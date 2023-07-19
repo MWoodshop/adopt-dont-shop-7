@@ -1,0 +1,17 @@
+<div class="describe">
+  <%= form_with(url: applicant_path(applicant), local: true, method: :get, id: 'describe-pet-form') do |f| %>
+      </div>
+        <%= f.fields_for :applicant do |applicant_fields| %>
+      <div>
+        <%= applicant_fields.label :add_description %>
+      </div>
+      <div>
+        <%= applicant_fields.text_area :description %>
+      </div>
+    <% end %>
+    <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
+    
+    <div>
+      <%= f.submit "Submit this application" %>
+    </div>
+  <% end %>

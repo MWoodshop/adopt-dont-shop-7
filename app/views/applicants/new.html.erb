@@ -21,10 +21,7 @@
       <%= applicant_fields.label :zip_code %>
       <%= applicant_fields.number_field :zip_code %>
     </div>
-    <div>
-      <%= applicant_fields.label :description %>
-      <%= applicant_fields.text_area :description %>
-    </div>
+   
   <% end %>
   <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
   <div>
