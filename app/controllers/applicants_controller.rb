@@ -46,6 +46,17 @@ class ApplicantsController < ApplicationController
   #   render 'search'
   # end
 
+  def update
+    @applicant = Applicant.find(params[:id])
+
+    if @applicant.update(applicant_params)
+      redirect_to applicant_path(@applicant)
+    else
+      flash[:error] = 'Invalid data. Please fill out fields correctly.'
+      render :show
+    end
+  end
+
   private
 
   def applicant_params
