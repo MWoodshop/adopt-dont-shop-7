@@ -32,3 +32,5 @@
 
 /coverage
 .DS_Store
+app/models/applicant.rb
+app/models/tempCodeRunnerFile.rb
