@@ -66,9 +66,14 @@ RSpec.describe 'the applicant shows page' do
     click_button 'Search for Pet'
     click_button 'Add Pet'
     visit applicant_path(@applicant1)
+    fill_in 'applicant_description', with: ''
+    click_button 'Submit this application'
+    expect(page).to have_current_path(applicant_path(@applicant1), ignore_query: true)
+    expect(page).to have_text('Description cannot be empty')
     fill_in 'applicant_description', with: 'I love dogs'
 
     click_button 'Submit this application'
+    expect(page).to have_content('successfully updated')
     expect(current_path).to eq(applicant_path(@applicant1))
     expect(page).to have_content('Pending')
     expect(page).to have_content('Lucille Bald')

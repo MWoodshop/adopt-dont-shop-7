@@ -2,7 +2,6 @@ class ApplicantsPetsController < ApplicationController
   def create
     @applicant = Applicant.find(params[:applicant_id])
     @pet = Pet.find(params[:pet_id])
-
     # Check if the pet is already associated with the applicant
     if @applicant.pets.exists?(@pet.id)
       redirect_to applicant_path(@applicant)
