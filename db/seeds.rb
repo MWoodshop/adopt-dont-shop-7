@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Destroy existing records
-ApplicantsPets.destroy_all
+ApplicantsPet.destroy_all
 Applicant.destroy_all
 Pet.destroy_all
 Shelter.destroy_all
