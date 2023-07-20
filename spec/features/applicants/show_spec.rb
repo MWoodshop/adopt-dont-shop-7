@@ -117,7 +117,7 @@ RSpec.describe 'the applicant shows page' do
   end
 
   # User Story 9
-  it 'can find a pet by partial search match' do
+  it 'can find a pet by case insensitive' do
     @shelter1 = Shelter.create!(foster_program: true, name: 'Shelter 1', city: 'Irvine', rank: 1)
     @applicant1 = Applicant.create!(id: 1, name: 'Bob', street_address: '1234 a street', city: 'Irvine', state: 'CA',
                                     zip_code: '58200', status: 'In Progress')
